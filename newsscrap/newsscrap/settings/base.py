@@ -14,7 +14,7 @@ import json
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 #Codigo secret.json
 with open("secret.json") as f:
@@ -34,7 +34,7 @@ def get_secret(secret_name, secrets=secret):
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret('SECRET_KEY')
 
-
+print(BASE_DIR)
 
 
 # Application definition

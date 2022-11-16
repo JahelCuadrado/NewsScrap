@@ -12,7 +12,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'newsscrap/db.sqlite3',
     }
 }
 
@@ -21,3 +21,4 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIR = [BASE_DIR / 'static']
