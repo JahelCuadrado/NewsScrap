@@ -3,8 +3,11 @@
 *.pot
 *.pyc
 __pycache__
-./newsscrap/secret.json
 media
+
+# Secret #
+newsscrap/secret.json
+
 
 # Backup files # 
 *.bak 
