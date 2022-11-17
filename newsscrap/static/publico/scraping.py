@@ -4,13 +4,15 @@ import sys
 sys.path.append('E:\\Escritorio\\Trabajo\\Proyectos Django\\NewsScrap\\newsscrap')
 
 import django
-from scrapy.selector               import Selector
-from django.apps                   import AppConfig
-from scrapy.spiders                import Rule
-from scrapy.crawler                import CrawlerProcess
-from scrapy.selector               import Selector
-from scrapy.linkextractors         import LinkExtractor
-from scrapy.spiders                import CrawlSpider
+from twisted.internet.task import LoopingCall
+from twisted.internet      import reactor
+from scrapy.selector       import Selector
+from django.apps           import AppConfig
+from scrapy.spiders        import Rule
+from scrapy.crawler        import CrawlerRunner
+from scrapy.selector       import Selector
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders        import CrawlSpider
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE",'newsscrap.settings.local')
 django.setup()
@@ -61,6 +63,7 @@ class ExtractorPublico(CrawlSpider, AppConfig):
         print('Noticias extraidas')
 
 
-proceso = CrawlerProcess()
-proceso.crawl(ExtractorPublico)
-proceso.start()
+runner = CrawlerRunner()
+task = LoopingCall(lambda: runner.crawl(ExtractorPublico))
+task.start(7200)
+reactor.run()

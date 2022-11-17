@@ -4,13 +4,12 @@ import sys
 sys.path.append('E:\\Escritorio\\Trabajo\\Proyectos Django\\NewsScrap\\newsscrap')
 
 import django
-from django.shortcuts import render
-from concurrent.futures import process
-from django.http import HttpResponse
-from scrapy.spiders import Spider
-from scrapy.crawler import CrawlerProcess
-from scrapy.selector import Selector
-from django.apps import AppConfig
+from twisted.internet.task import LoopingCall
+from twisted.internet      import reactor
+from scrapy.spiders        import Spider
+from scrapy.crawler        import CrawlerRunner
+from scrapy.selector       import Selector
+from django.apps           import AppConfig
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE",'newsscrap.settings.local')
 django.setup()
@@ -47,6 +46,7 @@ class ExtractorXataka(Spider, AppConfig):
             datos.save()
             print('Noticias extraidas')
 
-process = CrawlerProcess()
-process.crawl(ExtractorXataka)
-process.start()
+runner = CrawlerRunner()
+task = LoopingCall(lambda: runner.crawl(ExtractorXataka))
+task.start(7200)
+reactor.run()

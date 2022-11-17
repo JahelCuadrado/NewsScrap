@@ -5,11 +5,11 @@ sys.path.append('E:\\Escritorio\\Trabajo\\Proyectos Django\\NewsScrap\\newsscrap
 
 import django
 from twisted.internet.task import LoopingCall
-from twisted.internet import reactor
-from scrapy.spiders import Spider
-from scrapy.crawler import CrawlerRunner
-from scrapy.selector import Selector
-from django.apps import AppConfig
+from twisted.internet      import reactor
+from scrapy.spiders        import Spider
+from scrapy.crawler        import CrawlerRunner
+from scrapy.selector       import Selector
+from django.apps           import AppConfig
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE",'newsscrap.settings.local')
 django.setup()
@@ -49,5 +49,5 @@ class ExtractorAnait(Spider, AppConfig):
 
 runner = CrawlerRunner()
 task = LoopingCall(lambda: runner.crawl(ExtractorAnait))
-task.start(60)
+task.start(7200)
 reactor.run()
