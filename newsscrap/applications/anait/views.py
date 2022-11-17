@@ -5,7 +5,6 @@ from .models import NoticiasAnait
 
 
 # Create your views here.
-
 class AnaitNewsListApiView(ListAPIView): 
     serializer_class = AnaitNewsSerializer
     def get_queryset(self):
