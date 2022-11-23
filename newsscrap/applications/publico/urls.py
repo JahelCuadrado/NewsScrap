@@ -1,7 +1,7 @@
-from django.contrib import admin
-from django.urls import path
 from . import views
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('noticias/publico/', views.PublicoNewsListApiView.as_view()),
-]
+router = DefaultRouter()
+router.register('', views.PublicoNewsCrud, 'publico-news')
+
+urlpatterns = router.urls

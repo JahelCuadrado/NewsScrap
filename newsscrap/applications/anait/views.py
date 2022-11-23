@@ -1,11 +1,10 @@
-from django.shortcuts import render
-from rest_framework.generics import ListAPIView
 from .serializers import AnaitNewsSerializer
 from .models import NoticiasAnait
+from .permissions import IsAdminOrReadOnly
+from rest_framework.viewsets import ModelViewSet
 
 
-# Create your views here.
-class AnaitNewsListApiView(ListAPIView): 
+class AnaitNewsCrud(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
     serializer_class = AnaitNewsSerializer
-    def get_queryset(self):
-        return NoticiasAnait.objects.all().order_by('-id')
+    queryset = NoticiasAnait.objects.all().order_by('-id')

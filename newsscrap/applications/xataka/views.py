@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet
 from .serializers import XatakaNewsSerializer
 from .models import NoticiasXataka
+from .permissions import IsAdminOrReadOnly
 # Create your views here.
 
-class XatakaNewsListApiView(ListAPIView): 
-    serializer_class = XatakaNewsSerializer  
-    def get_queryset(self):
-        return NoticiasXataka.objects.all().order_by('-id')
+ 
+class XatakaNewsCrud(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
+    serializer_class = XatakaNewsSerializer
+    queryset = NoticiasXataka.objects.all().order_by('-id')

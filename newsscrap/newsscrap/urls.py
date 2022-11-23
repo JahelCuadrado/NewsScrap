@@ -35,9 +35,9 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('', include('applications.anait.urls')),
-    re_path('', include('applications.publico.urls')),
-    re_path('', include('applications.xataka.urls')),
+    re_path('noticias/anait/', include('applications.anait.urls')),
+    re_path('noticias/publico/', include('applications.publico.urls')),
+    re_path('noticias/xataka/', include('applications.xataka.urls')),
     re_path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 
 ]

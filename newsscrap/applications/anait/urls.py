@@ -1,7 +1,7 @@
-from django.contrib import admin
-from django.urls import path
 from . import views
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('noticias/anait/', views.AnaitNewsListApiView.as_view()),
-]
+router = DefaultRouter()
+router.register('', views.AnaitNewsCrud, 'anait-news')
+
+urlpatterns = router.urls
