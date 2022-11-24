@@ -35,10 +35,17 @@ Asegurate de que estás en la carpeta proyecto-django. Ahora activa el entorno v
 ## 5º Instala los requerimientos en el entorno virtual
 
 `pip install ./requeriments/base.txt`
+
+
+
+## 6º Instala los requerimientos en el entorno virtual
+Descarga el archivo de secret.json pongo dentro de la carpeta newsscrap, al mismo nivel que el archivo manage.py
+
+`https://github.com/JahelCuadrado/newsscrap-secret.json`
   
   
   
-## 6º Ahora ya puedes ejecutar el servidor
+## 7º Ahora ya puedes ejecutar el servidor
 Entra dentro de la carpeta 'newsscrap'
 
 `cd newsscrap`
@@ -49,7 +56,7 @@ Y ejecuta el servidor
   
   
   
-## 7º Accede al servidor
+## 8º Accede al servidor
 Ahora el servidor ya está en marcha, puedes acceder a el a traves de:
 
 `http://127.0.0.1:8000/`
