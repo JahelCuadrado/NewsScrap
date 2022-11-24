@@ -1,13 +1,6 @@
 #Poner en marcha el proyecto  
 
 
-  
-  
-  
-  
-  
-
-
 ##1º Instalar python
 https://www.python.org/
   
