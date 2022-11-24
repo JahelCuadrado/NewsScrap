@@ -9,7 +9,7 @@ https://www.python.org/
 ## 2º Clonar el repositorio
 Crea una carpeta en el escritorio llamada proyecto-django por ejemplo y dentro clona el respositorio.
 
-`git clone https://github.com/JahelCuadrado/NewsScrap.git`
+` git clone https://github.com/JahelCuadrado/NewsScrap.git `
   
   
   
