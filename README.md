@@ -41,7 +41,7 @@ Asegurate de que estás en la carpeta proyecto-django. Ahora activa el entorno v
 ## 6º Implementa el archivo de acceso
 Descarga el archivo de secret.json pongo dentro de la carpeta newsscrap, al mismo nivel que el archivo manage.py
 
-`https://github.com/JahelCuadrado/newsscrap-secret.json`
+https://github.com/JahelCuadrado/newsscrap-secret.json
   
   
   
