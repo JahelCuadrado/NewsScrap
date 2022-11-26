@@ -28,7 +28,7 @@ Una vez instalado crear el entorno virtual.
 ## 4º Activa el entorno virtual
 Asegurate de que estás en la carpeta proyecto-django. Ahora activa el entorno virtual.
 
-`.\venv\Script\activate`
+`.\venv\Scripts\activate`
   
   
   
