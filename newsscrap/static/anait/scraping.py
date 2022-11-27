@@ -11,8 +11,10 @@ from scrapy.crawler        import CrawlerRunner
 from scrapy.selector       import Selector
 from django.apps           import AppConfig
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE",'newsscrap.settings.local')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", 'newsscrap.settings.local')
+
 django.setup()
+
 from applications.anait.models import NoticiasAnait
 
 

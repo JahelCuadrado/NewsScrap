@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.append('E:\\Escritorio\\Trabajo\\Proyectos Django\\NewsScrap\\newsscrap')
+sys.path.append('E:\\Escritorio\\Trabajo\\Proyectos Django\\NewsScrap\\newsscrap\\')
 
 import django
 from twisted.internet.task import LoopingCall
